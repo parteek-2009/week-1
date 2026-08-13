@@ -25,39 +25,64 @@ $$P(\text{Genuine}) = P(S_1) + P(S_4)$$
 ## 3. How the Agent Works (2-Level Pipeline)
 
 [ Incoming Review ]
+
 │
+
 ▼
 [ Level 1: Primary Evidence Extraction ]
+
 ├── 1. Micro-LLM Structure Check (Very Short, Short, Moderate, Long)
+
 ├── 2. Verified Purchase Flag (True/False)
+
 ├── 3. Account Age (New, Moderate, Old)
+
 └── 4. Review Frequency (Low, High, Very High)
+
 │
+
 ▼
 [ Primary Bayes Calculation ]
+
 │
+
 ├── P(Genuine) > 60%  ──► [ Auto-Approve ]
+
 ├── P(Genuine) < 20%  ──► [ High-Priority HITL Ban Queue ]
+
 └── 20% ≤ P ≤ 60%    ──► [ Trigger Level 2 Deep Check ]
+
 │
+
 ▼
 [ Level 2: Secondary Evidence ]
+
 ├── 1. Cross-Review Text Similarity (Embedding Cosine Check)
+
 └── 2. Brand Concentration Ratio (% reviews on 1 seller)
+
 │
+
 ▼
 [ Secondary Bayes Update ]
+
 │
+
 ┌───────┴───────┐
+
 P > 60% │               │ P < 20%
 (Approve) ▼               ▼ (High-Priority HITL)
 Still 20%-60%
 │
+
 ▼
+
 [ Watchlist / 0.20x Weight Dampened ]
 
 
+
 ---
+
 
 ## 4. Pipeline Details
 
