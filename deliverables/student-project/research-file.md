@@ -86,7 +86,7 @@ The table below is my own prediction, based on the architecture's signals means 
 | Short review, unverified, very high frequency | Likely 2nd (bot spam) |
 | High cross-review similarity across last 5-10 reviews | Shifts belief toward 2nd and 3rd |
 | High brand concentration (most reviews target one seller) | Shifts belief toward 2nd and 3rd |
-| Long review, verified purchase, moderate account age | Likely 1sr (genuine) |
+| Long review, verified purchase, moderate account age | Likely 1st (genuine) |
 
 ## Prior, Likelihood, Posterior
 
